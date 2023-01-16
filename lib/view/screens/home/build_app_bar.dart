@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:foodd/components/size_config.dart';
+import 'package:foodd/widgets/app_icon.dart';
 import 'package:iconly/iconly.dart';
 
-import '../../components/custom_text.dart';
-import '../../widgets/colors.dart';
-import '../../widgets/dimensions.dart';
+import '../../../components/custom_text.dart';
+import '../../../utils/colors.dart';
+import '../../../utils/dimensions.dart';
 
 class BuildRowItem extends StatelessWidget {
   const BuildRowItem({Key? key}) : super(key: key);
@@ -17,15 +19,15 @@ class BuildRowItem extends StatelessWidget {
           // ignore: prefer_const_literals_to_create_immutables
           children: [
             CustomBigText(
-              text: 'Contry',
+              text: 'Egpyt',
               size: Dimensions.size28,
-              color: AppColors.mainColor,
+              color: mainColor,
             ),
             Row(
               children: [
                 CustomBigText(
                   text: 'Cairo',
-                  color: AppColors.signColor,
+                  color: signColor,
                   size: Dimensions.size16,
                 ),
                 Icon(
@@ -37,18 +39,18 @@ class BuildRowItem extends StatelessWidget {
           ],
         ),
         const Spacer(),
-        // ignore: sized_box_for_whitespace
         Center(
           child: Container(
-            height: Dimensions.height45,
-            width: Dimensions.width45,
-            child: const Icon(
-              IconlyLight.search,
+            height:getProportionateScreenHeight(45.0),
+            width: getProportionateScreenWidth(45.0),
+            child: const AppIcon(
+              backgroundColors: mainColor,
+              icon: IconlyLight.search,
               color: Colors.white,
             ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Dimensions.radius15),
-              color: AppColors.mainColor,
+              color: mainColor,
             ),
           ),
         ),

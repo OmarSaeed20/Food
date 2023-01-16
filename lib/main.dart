@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:foodd/pages/screens/food_detail/food_detail.dart';
-import 'package:foodd/pages/screens/food_detail/recommended_food_detail.dart';
+import 'package:foodd/view/screens/home/main_food_page.dart';
 import 'package:get/get.dart';
+import 'components/size_config.dart';
 import 'helper/dependencies.dart' as dep;
+import 'utils/colors.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dep.init();
+
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -23,12 +25,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // TODO: Api
+    // Get.find<PupularProductConrtoaller>().getPupularProductList();
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: !true,
       theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
+        primaryColor: mainColor,
       ),
-      home: const RecommendedFoodDetail(),
+      home: Builder(
+        builder: (context) {
+          SizeConfig().init(context);
+          return const MainFoodPage();
+        },
+      ),
     );
   }
 }

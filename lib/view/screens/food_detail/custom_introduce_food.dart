@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../../widgets/expandable_text_widget.dart';
+import 'package:foodd/components/size_config.dart';
 import '../../../components/custom_text.dart';
+import '../../../utils/dimensions.dart';
 import '../../../widgets/app_column.dart';
-import '../../../widgets/dimensions.dart';
+import '../../../widgets/expandable_text_widget.dart';
 
 class CustomIntroduceFood extends StatelessWidget {
   const CustomIntroduceFood({Key? key}) : super(key: key);
@@ -11,13 +12,13 @@ class CustomIntroduceFood extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const AppColumn(text: 'Biryani'),
+        const CustomAppColumn(text: 'Biryani'),
         SizedBox(
-          height: Dimensions.height20,
+          height: getProportionateScreenHeight(20.0),
         ),
         const CustomBigText(text: 'Introduce'),
         SizedBox(
-          height: Dimensions.height10,
+          height:  getProportionateScreenHeight(10.0),
         ),
         const Expanded(
           child: SingleChildScrollView(

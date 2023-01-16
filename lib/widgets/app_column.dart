@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:foodd/components/size_config.dart';
 import 'package:iconly/iconly.dart';
 
 import '../components/custom_text.dart';
 import '../components/icon_and_text_widget.dart';
 import '../components/small_text.dart';
-import 'colors.dart';
-import 'dimensions.dart';
+import '../utils/colors.dart';
+import '../utils/dimensions.dart';
 
-class AppColumn extends StatelessWidget {
+class CustomAppColumn extends StatelessWidget {
   final String text;
-  const AppColumn({Key? key, required this.text}) : super(key: key);
+  const CustomAppColumn({Key? key, required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,40 +21,40 @@ class AppColumn extends StatelessWidget {
           text: text,
           size: Dimensions.font26,
         ),
-        SizedBox(height: Dimensions.height10),
+        SizedBox(height:getProportionateScreenHeight(10.0)),
         Row(children: [
           Wrap(
             children: List.generate(
                 5,
                 (index) => Icon(
                       IconlyLight.star,
-                      color: AppColors.mainColor,
+                      color: mainColor,
                       size: Dimensions.size15,
                     )),
           ),
           SizedBox(width: Dimensions.radius10),
           const CustomSmallText(text: '4.5'),
-          SizedBox(width: Dimensions.width10),
+          SizedBox(width: getProportionateScreenWidth(10.0)),
           const CustomSmallText(text: '1287'),
-          SizedBox(width: Dimensions.width7),
+          SizedBox(width: getProportionateScreenWidth(7.0)),
           const CustomSmallText(text: 'comments'),
         ]),
-        SizedBox(height: Dimensions.height20),
+        SizedBox(height: getProportionateScreenHeight(20.0)),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+          children: const [
             IconAndTextWidget(
-              iconColor: AppColors.iconColor1,
+              iconColor: iconColor1,
               text: 'Normal',
               icon: Icons.circle_sharp,
             ),
             IconAndTextWidget(
-              iconColor: AppColors.mainColor,
+              iconColor: mainColor,
               text: '1.7Km',
               icon: IconlyLight.location,
             ),
             IconAndTextWidget(
-              iconColor: AppColors.iconColor2,
+              iconColor: iconColor2,
               text: '32 min',
               icon: IconlyLight.time_circle,
             ),

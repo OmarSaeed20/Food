@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/colors.dart';
-import '../widgets/dimensions.dart';
+import '../utils/colors.dart';
+import '../utils/dimensions.dart';
+import 'size_config.dart';
+
+ 
+
 
 class CustomSmallText extends StatelessWidget {
   final String text;
@@ -22,8 +26,8 @@ class CustomSmallText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        height: height ?? Dimensions.height102,
-        color: AppColors.signColor,
+        height: height ?? getProportionateScreenHeight(1.2),
+        color: color ?? signColor,
         fontSize: size ?? Dimensions.font12,
       ),
     );

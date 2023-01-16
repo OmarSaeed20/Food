@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/dimensions.dart';
-import 'build_row_item1.dart';
+import '../../../components/size_config.dart';
+import 'build_app_bar.dart';
 import 'food_page_body.dart';
 
 class MainFoodPage extends StatefulWidget {
@@ -16,7 +16,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
   Widget build(BuildContext context) {
     // print('------------' + MediaQuery.of(context).size.height.toString()); == "872.7272727272727"
     // ignore: avoid_print
-    print('------------' + MediaQuery.of(context).size.width.toString());
+    // print('------------' + MediaQuery.of(context).size.width.toString());
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
@@ -27,11 +27,11 @@ class _MainFoodPageState extends State<MainFoodPage> {
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: Dimensions.width30,
-                    vertical: Dimensions.height20),
+                    horizontal: getProportionateScreenWidth(30.0),
+                    vertical: getProportionateScreenHeight(20.0)),
                 child: const BuildRowItem(),
               ),
-              SizedBox(height: Dimensions.height10),
+              SizedBox(height: getProportionateScreenHeight(10.0)),
               const Expanded(
                   child: SingleChildScrollView(child: FoodPageBody())),
             ],

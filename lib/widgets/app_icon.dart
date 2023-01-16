@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'dimensions.dart';
 
+import '../utils/dimensions.dart';
+ 
 class AppIcon extends StatelessWidget {
   final IconData? icon;
   final Color? backgroundColors;

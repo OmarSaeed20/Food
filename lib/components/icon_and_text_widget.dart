@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:foodd/components/size_config.dart';
+ import '../utils/dimensions.dart';
 import 'small_text.dart';
 
-import '../widgets/dimensions.dart';
 
 class IconAndTextWidget extends StatelessWidget {
   final IconData icon;
@@ -26,7 +27,7 @@ class IconAndTextWidget extends StatelessWidget {
           color: iconColor,
           size: iconsSize ?? Dimensions.size20,
         ),
-        SizedBox(width: Dimensions.width5),
+        SizedBox(width:getProportionateScreenWidth(5.0)),
         CustomSmallText(
           text: text,
         ),

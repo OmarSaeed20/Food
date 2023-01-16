@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/colors.dart';
-import '../widgets/dimensions.dart';
+import '../utils/dimensions.dart';
+ 
+
 
 class CustomBigText extends StatelessWidget {
   final String text;
@@ -18,6 +19,8 @@ class CustomBigText extends StatelessWidget {
     this.overflow = TextOverflow.ellipsis,
     this.color,
   }) : super(key: key);
+  
+  get mainBlackColor => null;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +30,7 @@ class CustomBigText extends StatelessWidget {
       overflow: overflow,
       style: TextStyle(
         height: height,
-        color: color ?? AppColors.mainBlackColor,
+        color: color ?? mainBlackColor,
         fontWeight: FontWeight.w400,
         fontSize: size ?? Dimensions.font26,
       ),

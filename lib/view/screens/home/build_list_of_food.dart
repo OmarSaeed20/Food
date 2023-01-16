@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:foodd/components/size_config.dart';
 import 'package:iconly/iconly.dart';
 
-import '../../components/custom_text.dart';
-import '../../components/icon_and_text_widget.dart';
-import '../../components/small_text.dart';
-import '../../widgets/colors.dart';
-import '../../widgets/dimensions.dart';
+import '../../../components/custom_text.dart';
+import '../../../components/icon_and_text_widget.dart';
+import '../../../components/small_text.dart';
+import '../../../utils/colors.dart';
+import '../../../utils/dimensions.dart';
+ 
+
 
 class ListFoodAndImage extends StatelessWidget {
   const ListFoodAndImage({Key? key}) : super(key: key);
@@ -14,16 +17,16 @@ class ListFoodAndImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-        left: Dimensions.width30,
-        right: Dimensions.width5,
-        bottom: Dimensions.height10,
+        left: getProportionateScreenWidth(30.0),
+        right:  getProportionateScreenWidth(5.0),
+        bottom:  getProportionateScreenHeight(10.0),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            height: Dimensions.height120,
-            width: Dimensions.width120,
+            height: getProportionateScreenHeight(120.0),
+            width: getProportionateScreenWidth(120.0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Dimensions.radius20),
               color: Colors.white38,
@@ -35,7 +38,7 @@ class ListFoodAndImage extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              height: Dimensions.height100,
+              height:getProportionateScreenHeight(100.0),
               // width: Dimensions.width200,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
@@ -43,8 +46,8 @@ class ListFoodAndImage extends StatelessWidget {
                       bottomRight: Radius.circular(Dimensions.radius20))),
               child: Padding(
                 padding: EdgeInsets.only(
-                  left: Dimensions.width10,
-                  right: Dimensions.width10,
+                  left:getProportionateScreenWidth(10.0),
+                  right: getProportionateScreenWidth(10.0),
                 ),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,25 +55,25 @@ class ListFoodAndImage extends StatelessWidget {
                     children: [
                       const CustomBigText(
                           text: 'Nutritious Fruit meal in china'),
-                      SizedBox(height: Dimensions.height10),
+                      SizedBox(height: getProportionateScreenHeight(10.0)),
                       const CustomSmallText(
                           text: 'with chinese characteristics '),
-                      SizedBox(height: Dimensions.height10),
+                      SizedBox(height: getProportionateScreenHeight(10.0)),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
+                        children:  const [
                           IconAndTextWidget(
-                            iconColor: AppColors.iconColor1,
+                            iconColor: iconColor1,
                             text: 'Normal',
                             icon: Icons.circle_sharp,
                           ),
                           IconAndTextWidget(
-                            iconColor: AppColors.mainColor,
+                            iconColor: mainColor,
                             text: '1.7Km',
                             icon: IconlyLight.location,
                           ),
                           IconAndTextWidget(
-                            iconColor: AppColors.iconColor2,
+                            iconColor: iconColor2,
                             text: '32 min',
                             icon: IconlyLight.time_circle,
                           ),
