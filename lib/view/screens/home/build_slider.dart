@@ -68,7 +68,8 @@ class SliderItem extends StatelessWidget {
           Container(
             height: Dimensions.pageViewContainer,
             margin: EdgeInsets.only(
-                right: getProportionateScreenWidth(10.0), left:getProportionateScreenWidth(10.0)),
+                right: getProportionateScreenWidth(10.0),
+                left: getProportionateScreenWidth(10.0)),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Dimensions.radius30),
               image: const DecorationImage(
@@ -165,7 +166,8 @@ Widget buildSlider(
         Container(
           height: Dimensions.pageViewContainer,
           margin: EdgeInsets.only(
-              right: getProportionateScreenWidth(10.0), left:getProportionateScreenWidth(10.0)),
+              right: getProportionateScreenWidth(10.0),
+              left: getProportionateScreenWidth(10.0)),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(Dimensions.radius30),
             color: index!.isEven
@@ -173,7 +175,7 @@ Widget buildSlider(
                 : const Color(0xFF69c5df),
             image: DecorationImage(
               image: NetworkImage(
-                  AppConstants.baseUrl + "/uploades/" + productsModel.img!),
+                  AppApi.baseUrl + AppApi.uploads + productsModel.img!),
               fit: BoxFit.cover,
             ),
           ),

@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:foodd/components/size_config.dart';
+import 'package:foodd/controllers/recommended_product_controller.dart';
+import 'package:foodd/utils/app_constant.dart';
+import 'package:foodd/utils/colors.dart';
+import 'package:foodd/view/routes/route_helper.dart';
+import 'package:foodd/view/screens/food_detail/food_detail.dart';
 import 'package:get/get.dart';
 import '../../../components/custom_text.dart';
 import '../../../components/small_text.dart';
@@ -49,22 +54,31 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         //         ? Container(
         //             height: Dimensions.pageView,
         //             color: Colors.transparent,
-        //             child: PageView.builder(
-        //               controller: pageController,
-        //               physics: const BouncingScrollPhysics(),
-        //               itemCount: popularProduct.pupularProductList.length,
-        //               itemBuilder: (
-        //                 context,
-        //                 position,
-        //               ) {
-        //                 return buildSlider(
-        //                     popularProduct.pupularProductList[position],
-        //                     position,
-        //                     currentPageValue);
+        //             child: GestureDetector(
+        //               onTap: () {
+        //                 Get.toNamed(RouteHelper.getFoodDetail());
         //               },
+        //               child: PageView.builder(
+        //                 controller: pageController,
+        //                 physics: const BouncingScrollPhysics(),
+        //                 itemCount: popularProduct.pupularProductList.length,
+        //                 itemBuilder: (
+        //                   context,
+        //                   position,
+        //                 ) {
+        //                   return buildSlider(
+        //                       popularProduct.pupularProductList[position],
+        //                       position,
+        //                       currentPageValue);
+        //                 },
+        //               ),
         //             ),
         //           )
-        //         : Container(height: Dimensions.pageView);
+        //         : SizedBox(
+        //             height: Dimensions.pageView,
+        //             child: const Center(
+        //                 child: CircularProgressIndicator(color: mainColor)),
+        //           );
         //   },
         // ),
 
@@ -101,7 +115,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              const CustomBigText(text: 'Popular'),
+              const CustomBigText(text: 'Recommended'),
               SizedBox(width: getProportionateScreenWidth(10.0)),
               Container(
                   margin: EdgeInsets.only(bottom: Dimensions.size3),
@@ -117,6 +131,28 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           ),
         ),
         SizedBox(height: getProportionateScreenHeight(20.0)),
+        // TODO : Api
+        // GetBuilder<RecommendProductConrtoaller>(
+        //   builder: (recomProdConrt) {
+        //     return recomProdConrt.isLoaded
+        //         ? ListView.builder(
+        //             physics: const NeverScrollableScrollPhysics(),
+        //             shrinkWrap: true,
+        //             itemCount: recomProdConrt.recommendedProductLi.length,
+        //             itemBuilder: (context, index) {
+        //               return listFoodAndImage(
+        //                 img: AppApi.baseUrl +
+        //                     AppApi.uploads +
+        //                     recomProdConrt.recommendedProductLi[index].img!,
+        //                 name: recomProdConrt.recommendedProductLi[index].name!,
+        //                 subTi: recomProdConrt.recommendedProductLi[index].name!,
+        //               );
+        //             })
+        //         : const Center(
+        //             child: CircularProgressIndicator(color: mainColor));
+        //   },
+        // ),
+
         ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,

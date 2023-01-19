@@ -29,7 +29,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
                 padding: EdgeInsets.symmetric(
                     horizontal: getProportionateScreenWidth(30.0),
                     vertical: getProportionateScreenHeight(20.0)),
-                child: const BuildRowItem(),
+                child: const BuildAppBarItem(),
               ),
               SizedBox(height: getProportionateScreenHeight(10.0)),
               const Expanded(
